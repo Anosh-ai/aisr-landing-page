@@ -61,7 +61,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-30 text-white transition-[background-color,border-color,backdrop-filter] duration-200 ${
+      className={`fixed inset-x-0 top-0 z-50 text-white transition-[background-color,border-color,backdrop-filter] duration-200 ${
         solidNav
           ? "border-b border-white/10 bg-primary/95 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"

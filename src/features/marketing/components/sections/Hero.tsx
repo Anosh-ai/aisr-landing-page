@@ -13,16 +13,20 @@ export function Hero() {
         height={576}
         decoding="async"
         fetchPriority="high"
-        className="pointer-events-none absolute inset-0 size-full object-cover object-right [image-rendering:auto]"
+        className="pointer-events-none absolute inset-0 size-full object-cover object-[right_top] [image-rendering:auto]"
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(7,11,22,0.72)_0%,rgba(7,11,22,0.4)_30%,rgba(7,11,22,0.12)_55%,transparent_78%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(7,11,22,0.82)_0%,rgba(7,11,22,0.5)_28%,rgba(7,11,22,0.18)_52%,transparent_76%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-24 bg-[linear-gradient(180deg,rgba(7,11,22,0.65)_0%,transparent_100%)]"
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex h-full items-center pl-5 pr-5 pt-14 pb-8 sm:pl-8 sm:pr-6 md:pt-16 md:pb-10 lg:pl-12 xl:pl-16">
+      <div className="relative z-10 flex h-full min-h-0 items-start sm:items-center pl-5 pr-5 pt-28 pb-8 sm:pl-8 sm:pr-6 md:pt-32 md:pb-10 lg:pl-12 xl:pl-16">
         <div className="mr-auto w-full max-w-lg text-left lg:max-w-xl">
           <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-wide text-white/90 sm:text-sm">
             {heroBadge}
