@@ -57,29 +57,6 @@ export const advantageFeatures = [
   },
 ] as const
 
-export const howItWorksSteps = [
-  {
-    id: "verify",
-    title: "Verify",
-    text: "Confirm the driver with license, face verification, device, and ELD identity.",
-  },
-  {
-    id: "connect",
-    title: "Connect",
-    text: "Link the driver to the truck, VIN, company, insurance, and assigned freight.",
-  },
-  {
-    id: "monitor",
-    title: "Monitor",
-    text: "Compare location, hours, route, speeding, and hard-braking activity during the load.",
-  },
-  {
-    id: "protect",
-    title: "Protect",
-    text: "Surface mismatches and risk indicators for review before and during transit.",
-  },
-] as const
-
 export const platformPoints = [
   "Live shipment and route monitoring for active freight",
   "Driver and carrier context for brokers before assignment",

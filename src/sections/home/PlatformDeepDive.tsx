@@ -2,52 +2,49 @@ import { ArrowRight, Check } from "lucide-react"
 import { Container } from "@/components/common/Container"
 import { Button } from "@/components/ui/Button"
 import { platformPoints } from "@/constants/landing"
+import platformDashboard from "@/assets/images/platform-dashboard.webp"
+import "./platform-deep-dive.css"
 
 export function PlatformDeepDive() {
   return (
-    <section id="platform" className="scroll-mt-24 bg-surface py-16 md:py-24">
-      <Container className="grid items-center gap-10 lg:grid-cols-2">
-        <div className="relative order-2 lg:order-1">
-          <div className="overflow-hidden rounded-[1.4rem] border border-primary/10 bg-white shadow-[0_30px_80px_-40px_rgba(11,18,32,0.55)]">
-            <div className="border-b border-primary/8 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary/50">
-                Shipment Tracking
-              </p>
-              <p className="mt-1 text-lg font-semibold text-primary">Active load monitoring</p>
-            </div>
-            <div className="relative h-56 bg-[linear-gradient(160deg,#e8eef7,#d7e4f3)] sm:h-64">
-              <svg viewBox="0 0 480 260" className="absolute inset-0 h-full w-full" aria-hidden="true">
-                <path
-                  d="M40 180C110 150 160 90 230 100C300 110 330 160 420 140"
-                  stroke="#191D31"
-                  strokeWidth="3"
-                  fill="none"
-                  opacity="0.35"
-                />
-                <path
-                  d="M40 180C110 150 160 90 230 100C300 110 330 160 420 140"
-                  stroke="#68CFF7"
-                  strokeWidth="3"
-                  strokeDasharray="8 8"
-                  fill="none"
-                />
-                <circle cx="230" cy="100" r="8" fill="#68CFF7" />
-                <circle cx="420" cy="140" r="7" fill="#191D31" />
-              </svg>
-              <div className="absolute left-5 top-5 rounded-control bg-white px-3 py-2 text-xs font-semibold text-primary shadow-sm">
-                Pickup
-              </div>
-              <div className="absolute bottom-5 right-5 rounded-control bg-white px-3 py-2 text-xs font-semibold text-primary shadow-sm">
-                Delivery
-              </div>
-            </div>
-          </div>
+    <section id="platform" className="scroll-mt-24 overflow-hidden bg-white py-16 md:py-24">
+      <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="relative order-2 mx-auto w-full max-w-xl [perspective:1400px] lg:order-1 lg:mx-0 lg:max-w-none">
+          {/* Soft cyan glow plate behind the tilted frame */}
+          <div
+            aria-hidden="true"
+            className="aisr-dash-glow absolute -inset-x-4 -inset-y-6 rounded-[1.75rem] bg-secondary/30 blur-2xl sm:-inset-x-6"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute -left-3 top-8 h-[76%] w-[90%] rounded-[1.35rem] bg-secondary/40 sm:-left-5"
+          />
 
-          <div className="absolute -bottom-5 left-6 rounded-card border border-primary/10 bg-white px-4 py-3 shadow-[0_18px_40px_-24px_rgba(11,18,32,0.55)] sm:left-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/50">
-              Risk indicator
-            </p>
-            <p className="mt-1 text-sm font-semibold text-primary">Route match under review</p>
+          <div className="aisr-dash-frame relative origin-center">
+            <div className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#121212] shadow-[0_32px_80px_-28px_rgba(25,29,49,0.7),0_0_0_1px_rgba(104,207,247,0.22),0_0_40px_-8px_rgba(104,207,247,0.35)]">
+              <img
+                src={platformDashboard}
+                alt="AISR platform dashboard showing cargo layout, delivery performance, and vehicle status"
+                width={1280}
+                height={800}
+                className="block h-auto w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            {/* Overlapping risk score card — floats off the right edge */}
+            <div className="aisr-dash-risk absolute -right-3 bottom-[16%] z-10 w-[8.5rem] rounded-2xl border border-white/10 bg-primary/95 px-3.5 py-3.5 shadow-[0_18px_40px_-16px_rgba(11,18,32,0.75)] backdrop-blur-sm sm:-right-5 sm:bottom-[20%] sm:w-40 sm:px-4 sm:py-4">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/55">
+                Risk Score
+              </p>
+              <div className="mt-2.5 flex items-center gap-2">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                  <Check aria-hidden="true" size={14} strokeWidth={3} />
+                </span>
+                <p className="text-sm font-semibold text-white">Low Risk</p>
+              </div>
+            </div>
           </div>
         </div>
 
