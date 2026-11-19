@@ -1,0 +1,7 @@
+export { LandingPage } from "./pages/LandingPage"
+export { AboutPage } from "./pages/AboutPage"
+export { ContactPage } from "./pages/ContactPage"
+export { PrivacyPage } from "./pages/PrivacyPage"
+export { TermsPage } from "./pages/TermsPage"
+export { Navbar } from "./components/Navbar"
+export { Footer } from "./components/Footer"
