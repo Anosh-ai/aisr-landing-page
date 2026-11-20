@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Outlet, useLocation } from "react-router-dom"
-import { MarketingPageShell } from "@/features/marketing/components/layout/MarketingPageShell"
+import { Footer } from "@/features/marketing/components/Footer"
+import { Navbar } from "@/features/marketing/components/Navbar"
 
 export function SiteLayout() {
   const location = useLocation()
@@ -19,8 +20,18 @@ export function SiteLayout() {
   }, [location.pathname, location.hash])
 
   return (
-    <MarketingPageShell contentClassName={isHome ? "" : "pt-20"}>
-      <Outlet />
-    </MarketingPageShell>
+    <div className="flex min-h-screen flex-col bg-canvas text-ink">
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-40 focus:rounded-control focus:bg-secondary focus:px-4 focus:py-2 focus:text-primary"
+      >
+        Skip to content
+      </a>
+      <Navbar />
+      <main id="content" className={`flex-1 ${isHome ? "" : "pt-20"}`}>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   )
 }
