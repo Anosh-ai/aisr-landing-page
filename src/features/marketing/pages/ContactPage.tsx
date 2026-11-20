@@ -17,7 +17,7 @@ export function ContactPage() {
       <section className="bg-canvas py-16 md:py-24">
         <Container className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div className="rounded-card border border-primary/10 bg-white p-6 sm:p-8">
-            <h2 className="font-display text-2xl text-primary">Message</h2>
+            <h2 className="text-2xl text-primary">Message</h2>
             <div className="mt-6">
               <ContactForm />
             </div>

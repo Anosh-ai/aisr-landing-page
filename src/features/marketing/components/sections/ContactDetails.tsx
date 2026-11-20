@@ -35,7 +35,7 @@ export function ContactDetails() {
 
   return (
     <aside className="rounded-card border border-primary/10 bg-card p-6">
-      <h2 className="font-display text-2xl text-primary">Company details</h2>
+      <h2 className="text-2xl text-primary">Company details</h2>
       <p className="mt-3 text-sm leading-6 text-ink">
         Email, phone, address, and a map are shown here when AISR publishes them.
       </p>

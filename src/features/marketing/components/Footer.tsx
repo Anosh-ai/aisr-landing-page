@@ -76,7 +76,7 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-3">
             {footerGroups.map((group) => (
               <div key={group.id}>
-                <h2 className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
                   {group.title}
                 </h2>
                 <ul className="mt-4 space-y-2.5">

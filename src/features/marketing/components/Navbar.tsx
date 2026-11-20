@@ -87,13 +87,13 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-semibold text-white shadow-none outline-none hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
+            className="inline-flex items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-bold text-white shadow-none outline-none hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
           >
             Sign In
           </Link>
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-semibold text-on-secondary shadow-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
+            className="inline-flex items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-bold text-on-secondary shadow-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
           >
             Sign Up
           </Link>
@@ -130,13 +130,13 @@ export function Navbar() {
             <div className="mt-3 flex flex-col gap-2">
               <Link
                 to="/contact"
-                className="inline-flex w-fit items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-semibold text-white shadow-none"
+                className="inline-flex w-fit items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-bold text-white shadow-none"
               >
                 Sign In
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex w-fit items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-semibold text-on-secondary shadow-none"
+                className="inline-flex w-fit items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-bold text-on-secondary shadow-none"
               >
                 Sign Up
               </Link>

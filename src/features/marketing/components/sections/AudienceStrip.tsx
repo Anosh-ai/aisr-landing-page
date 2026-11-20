@@ -18,7 +18,7 @@ export function AudienceStrip() {
   return (
     <section
       id="audiences"
-      className="scroll-mt-24 border-y border-primary/8 bg-surface py-9 sm:py-11"
+      className="scroll-mt-24 border-y border-primary/8 bg-[#eef1f4] py-9 sm:py-11"
       aria-label={trustedByCopy}
     >
       <Container className="max-w-7xl">
@@ -31,9 +31,7 @@ export function AudienceStrip() {
             {trustedBrands.map((brand) => (
               <li
                 key={brand.id}
-                className={`inline-flex items-center gap-2 font-sans text-sm font-semibold tracking-tight text-primary sm:text-[15px] ${
-                  brand.id === "freightex" ? "italic tracking-[0.02em]" : ""
-                }`}
+                className="inline-flex items-center gap-2 font-display text-sm font-extrabold tracking-tight text-primary transition duration-200 ease-out hover:-translate-y-0.5 hover:text-[#12182b] sm:text-[15px]"
               >
                 <img
                   src={brandLogos[brand.logo]}

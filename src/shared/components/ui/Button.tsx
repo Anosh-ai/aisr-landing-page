@@ -13,7 +13,7 @@ const variants = {
 } as const
 
 const baseClass =
-  "inline-flex items-center justify-center gap-2 rounded-button px-6 py-3.5 text-center text-[15px] font-semibold leading-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:cursor-not-allowed disabled:opacity-60"
+  "inline-flex items-center justify-center gap-2 rounded-button px-6 py-3.5 text-center text-[15px] font-bold leading-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:cursor-not-allowed disabled:opacity-60"
 
 type Variant = keyof typeof variants
 

@@ -13,7 +13,7 @@ export function BottomCta() {
       />
       <div className="absolute inset-0 bg-primary/75" aria-hidden="true" />
       <Container className="relative text-center">
-        <h2 className="font-display mx-auto max-w-3xl text-3xl leading-tight md:text-4xl">
+        <h2 className="mx-auto max-w-3xl text-3xl leading-tight md:text-4xl">
           Ready to Make Your Freight Operations Safer?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/75">

@@ -258,7 +258,7 @@ function MilestoneCard({
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
-      <h3 className="font-display mt-1.5 text-sm font-medium leading-snug text-primary">{step.title}</h3>
+      <h3 className="mt-1.5 text-sm font-medium leading-snug text-primary">{step.title}</h3>
       <p className="mt-0.5 text-[0.72rem] leading-4 text-ink">{step.text}</p>
     </article>
   )
@@ -397,7 +397,7 @@ function JourneyBoard({
         )
       })}
 
-      <div className="pointer-events-none absolute bottom-3 right-6 z-[5] inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-white/95 px-3.5 py-2 text-[0.75rem] font-medium text-primary shadow-[0_10px_24px_-14px_rgba(0,236,245,0.45)]">
+      <div className="pointer-events-none absolute bottom-3 right-6 z-[5] inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-white/95 px-3.5 py-2 text-[0.75rem] font-bold text-primary shadow-[0_10px_24px_-14px_rgba(0,236,245,0.45)]">
         <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white">
           <Check aria-hidden="true" size={10} strokeWidth={3} />
         </span>
@@ -438,19 +438,19 @@ export function HowItWorks() {
         visible ? "is-visible" : ""
       }`}
     >
-      <Container>
-        <div className="relative z-[1] mx-auto max-w-3xl text-center">
+      <Container className="max-w-7xl">
+        <div className="relative z-[1] max-w-3xl text-left">
           <p className="aisr-journey-label">{howItWorksCopy.eyebrow}</p>
-          <h2 className="font-display mt-4 text-3xl leading-tight text-primary md:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-primary md:text-4xl">
             {howItWorksCopy.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-ink md:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-ink md:text-lg">
             {howItWorksCopy.description}
           </p>
         </div>
       </Container>
 
-      <div className="relative z-[1] mx-auto w-full max-w-[86rem] overflow-x-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative z-[1] mx-auto w-full max-w-7xl overflow-x-auto px-5 sm:px-6 lg:px-8">
         <JourneyBoard visible={visible} hoverId={hoverId} setHoverId={setHoverId} />
       </div>
 

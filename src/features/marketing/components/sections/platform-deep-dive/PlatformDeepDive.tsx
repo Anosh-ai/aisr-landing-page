@@ -1,15 +1,17 @@
 import { ArrowRight, Check } from "lucide-react"
 import { platformPoints } from "@/features/marketing/constants/landing"
 import platformDashboard from "@/features/marketing/assets/images/platform-dashboard.png"
+import { Container } from "@/shared/components/Container"
 import { Button } from "@/shared/components/ui/Button"
 import "./platform-deep-dive.css"
 
 export function PlatformDeepDive() {
   return (
     <section id="platform" className="scroll-mt-24 overflow-x-clip bg-white pb-14 pt-10 md:pb-20 md:pt-14">
-      <div className="flex w-full min-w-0 flex-col items-stretch gap-10 px-5 sm:px-8 lg:flex-row lg:items-center lg:justify-start lg:gap-16 lg:px-12 xl:gap-24 xl:px-16 2xl:gap-32">
+      <Container className="max-w-7xl">
+      <div className="flex w-full min-w-0 flex-col items-stretch gap-10 lg:flex-row lg:items-center lg:justify-start lg:gap-12 xl:gap-16">
         <div className="relative order-2 min-w-0 w-full py-2 text-left lg:order-1 lg:w-[min(40rem,calc(100%-26rem-4rem))] xl:w-[min(44rem,calc(100%-28rem-6rem))] 2xl:w-[min(46rem,calc(100%-28rem-8rem))]">
-          <div className="relative w-full [perspective:1400px]">
+          <div className="aisr-dash-stage relative w-full [perspective:1400px]">
             {/* Soft cyan plates behind the tilted dashboard — match reference depth */}
             <div
               aria-hidden="true"
@@ -40,7 +42,7 @@ export function PlatformDeepDive() {
         </div>
 
         <div className="order-1 w-full min-w-0 max-w-md font-sans text-left lg:order-2 lg:w-[26rem] lg:max-w-[26rem] lg:shrink-0 xl:w-[28rem] xl:max-w-[28rem]">
-          <p className="inline-flex rounded-full bg-[#bcf4fd] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+          <p className="inline-flex rounded-full bg-[#bcf4fd] px-3 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-primary">
             Powerful Platform
           </p>
           <h2 className="aisr-platform-title mt-5 text-3xl font-bold leading-tight tracking-tight text-primary md:text-4xl">
@@ -64,6 +66,7 @@ export function PlatformDeepDive() {
           </div>
         </div>
       </div>
+      </Container>
     </section>
   )
 }

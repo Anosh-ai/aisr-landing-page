@@ -27,11 +27,11 @@ export function Advantage() {
       </div>
 
       <Container className="aisr-advantage__content max-w-7xl">
-        <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-xl lg:text-left">
-          <p className="inline-flex rounded-full bg-secondary/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+        <div className="max-w-2xl text-left lg:max-w-xl">
+          <p className="inline-flex rounded-full bg-secondary/15 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-primary">
             The AISR Advantage
           </p>
-          <h2 className="font-display mt-5 text-3xl leading-tight text-primary md:text-4xl">
+          <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-primary md:text-4xl">
             Everything You Need for a Safer, More Reliable Freight Network
           </h2>
           <p className="mt-4 text-base leading-7 text-ink">
@@ -51,7 +51,7 @@ export function Advantage() {
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-control bg-secondary/15 text-primary">
                   <Icon aria-hidden="true" size={22} />
                 </span>
-                <h3 className="font-display mt-4 text-lg text-primary">{feature.title}</h3>
+                <h3 className="mt-4 text-lg text-primary">{feature.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-ink">{feature.text}</p>
               </li>
             )

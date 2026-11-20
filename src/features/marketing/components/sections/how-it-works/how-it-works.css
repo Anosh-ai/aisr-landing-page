@@ -25,7 +25,7 @@
   background: color-mix(in srgb, var(--color-secondary) 18%, white);
   padding: 0.45rem 1rem;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-primary);

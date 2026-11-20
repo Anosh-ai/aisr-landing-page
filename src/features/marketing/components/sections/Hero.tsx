@@ -3,6 +3,17 @@ import heroBanner from "@/features/marketing/assets/images/hero-banner.png"
 import { heroBadge, heroChecks, heroCopy } from "@/features/marketing/constants/landing"
 import { Button } from "@/shared/components/ui/Button"
 
+const heroCheckOrder = [
+  "driver-verification",
+  "eld-integration",
+  "insurance-carrier",
+  "realtime-monitoring",
+] as const
+
+const alignedHeroChecks = heroCheckOrder.map(
+  (id) => heroChecks.find((item) => item.id === id)!,
+)
+
 export function Hero() {
   return (
     <section className="relative h-svh overflow-hidden bg-[#031020] text-white">
@@ -25,11 +36,11 @@ export function Hero() {
 
       <div className="relative z-10 flex h-full min-h-0 items-start sm:items-center pl-5 pr-5 pt-28 pb-10 sm:pl-8 sm:pr-6 md:pt-32 md:pb-12 lg:pl-12 xl:pl-16">
         <div className="mr-auto w-full max-w-lg text-left lg:max-w-xl">
-          <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-1.5 font-sans text-[13px] font-medium tracking-wide text-white/90 sm:text-sm">
+          <p className="inline-flex rounded-full border border-white/15 bg-[#06101c]/70 px-4 py-1.5 font-sans text-[13px] font-medium tracking-wide text-white/90 sm:text-sm">
             {heroBadge}
           </p>
 
-          <h1 className="font-display mt-5 text-[2.5rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+          <h1 className="mt-5 text-[2.5rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
             {heroCopy.title}
           </h1>
 
@@ -37,26 +48,28 @@ export function Hero() {
             {heroCopy.description}
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-3.5">
-            <Button href="/contact" className="rounded-lg px-6 py-3.5 text-[15px]">
+          <div className="mt-7 grid w-full grid-cols-1 gap-3 sm:w-max sm:max-w-full sm:grid-cols-[max-content_max-content] sm:gap-x-3.5">
+            <Button
+              href="/contact"
+              className="w-full rounded-lg px-6 py-3.5 text-[15px] sm:w-auto sm:justify-self-start"
+            >
               Access your dashboard
               <ArrowRight aria-hidden="true" size={18} strokeWidth={2.25} />
             </Button>
             <Button
               href="/#how-it-works"
               variant="ghost"
-              className="rounded-lg border-white/40 px-6 py-3.5 text-[15px]"
+              className="w-full rounded-lg border-white/40 px-6 py-3.5 text-[15px] sm:w-auto sm:justify-self-start"
             >
               See How It Works
               <Play aria-hidden="true" size={16} strokeWidth={2.25} fill="currentColor" />
             </Button>
-          </div>
 
-          <ul className="mt-7 grid max-w-md grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
-            {heroChecks.map((item) => (
+            <ul className="mt-4 grid grid-cols-1 gap-y-3 sm:col-span-2 sm:grid-cols-subgrid sm:gap-x-3.5">
+              {alignedHeroChecks.map((item) => (
               <li
                 key={item.id}
-                className="flex items-center gap-2.5 font-sans text-sm font-medium text-white"
+                className="flex items-center gap-2.5 whitespace-nowrap font-sans text-sm font-medium text-white"
               >
                 <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-secondary/15">
                   <img
@@ -71,8 +84,9 @@ export function Hero() {
                 </span>
                 {item.label}
               </li>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

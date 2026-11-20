@@ -19,7 +19,7 @@ export function AboutPage() {
           <div className="mx-auto max-w-3xl space-y-12">
           {aboutContent.sections.map((section) => (
             <article key={section.title}>
-              <h2 className="font-display text-2xl text-primary md:text-3xl">{section.title}</h2>
+              <h2 className="text-2xl text-primary md:text-3xl">{section.title}</h2>
               <div className="mt-4 space-y-4">
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph} className="text-base leading-7 text-ink">

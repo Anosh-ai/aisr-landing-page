@@ -28,6 +28,14 @@
   }
 }
 
+.aisr-dash-stage {
+  transition: transform 0.45s ease;
+}
+
+.aisr-dash-stage:hover {
+  transform: translateY(-8px) scale(1.015);
+}
+
 .aisr-dash-frame {
   transform-style: preserve-3d;
   transform-origin: 18% center;
@@ -81,5 +89,11 @@
   .aisr-dash-frame,
   .aisr-dash-glow {
     animation: none !important;
+  }
+
+  .aisr-dash-stage,
+  .aisr-dash-stage:hover {
+    transform: none;
+    transition: none;
   }
 }
