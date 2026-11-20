@@ -1,0 +1,63 @@
+@keyframes design3-hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.design3-hero-enter {
+  animation: design3-hero-fade-up 850ms cubic-bezier(0.22, 1, 0.36, 1)
+    var(--design3-enter-delay, 0ms) both;
+}
+
+@keyframes design3-intro-brand-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes design3-intro-screen-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.design3-intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+  color: var(--color-primary);
+  animation: design3-intro-screen-out 250ms ease-in 850ms both;
+}
+
+.design3-intro-brand {
+  display: inline-flex;
+  align-items: center;
+  animation: design3-intro-brand-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design3-hero-enter,
+  .design3-intro-screen,
+  .design3-intro-brand {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

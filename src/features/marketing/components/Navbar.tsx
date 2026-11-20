@@ -26,6 +26,7 @@ function isItemActive(pathname: string, hash: string, href: string) {
 export function Navbar() {
   const location = useLocation()
   const isHome = location.pathname === "/"
+  const isDesign2 = location.pathname === "/design-2"
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [openPath, setOpenPath] = useState(location.pathname + location.hash)
@@ -57,7 +58,7 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [open])
 
-  const solidNav = !isHome || scrolled || open
+  const solidNav = isDesign2 ? false : !isHome || scrolled || open
 
   return (
     <header
