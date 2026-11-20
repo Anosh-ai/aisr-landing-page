@@ -3,13 +3,13 @@ import { Link, useLocation } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import { mainNavigation } from "@/features/marketing/constants/navigation"
 import { Logo } from "@/shared/components/Logo"
-
-const shellPad =
-  "w-full pl-5 pr-5 sm:pl-8 sm:pr-6 lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-10"
+import { shellPad } from "@/features/marketing/constants/shell"
 
 function navClass(isActive: boolean) {
-  return `inline-flex items-center gap-1 rounded-control px-3 py-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary ${
-    isActive ? "text-secondary" : "text-white/85 hover:text-white"
+  return `relative inline-flex items-center gap-1 rounded-none px-3 py-2 text-sm font-medium shadow-none outline-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:rounded-full after:transition-colors ${
+    isActive
+      ? "text-secondary after:bg-secondary"
+      : "text-white/85 after:bg-transparent hover:text-white hover:after:bg-secondary/50"
   }`
 }
 
@@ -87,13 +87,13 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             to="/contact"
-            className="px-2 text-sm font-medium text-white/85 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+            className="inline-flex items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-semibold text-white shadow-none outline-none hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
           >
             Sign In
           </Link>
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-semibold text-primary transition-shadow hover:shadow-[0_8px_18px_-4px_rgba(104,207,247,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+            className="inline-flex items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-semibold text-on-secondary shadow-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
           >
             Sign Up
           </Link>
@@ -130,13 +130,13 @@ export function Navbar() {
             <div className="mt-3 flex flex-col gap-2">
               <Link
                 to="/contact"
-                className="rounded-control py-2 text-sm font-medium text-white/85"
+                className="inline-flex w-fit items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-semibold text-white shadow-none"
               >
                 Sign In
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex w-fit items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-semibold text-primary transition-shadow hover:shadow-[0_8px_18px_-4px_rgba(104,207,247,0.55)]"
+                className="inline-flex w-fit items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-semibold text-on-secondary shadow-none"
               >
                 Sign Up
               </Link>

@@ -7,6 +7,7 @@ import {
 import type { LucideIcon } from "lucide-react"
 import { advantageFeatures } from "@/features/marketing/constants/landing"
 import { Container } from "@/shared/components/Container"
+import "./advantage.css"
 
 const icons: Record<(typeof advantageFeatures)[number]["id"], LucideIcon> = {
   "driver-verification": BadgeCheck,
@@ -17,8 +18,15 @@ const icons: Record<(typeof advantageFeatures)[number]["id"], LucideIcon> = {
 
 export function Advantage() {
   return (
-    <section id="product" className="scroll-mt-24 bg-canvas py-16 md:py-24">
-      <Container>
+    <section id="product" className="aisr-advantage scroll-mt-24 bg-canvas py-16 md:py-24">
+      <div className="aisr-advantage__bg" aria-hidden="true">
+        <span className="aisr-advantage__orb aisr-advantage__orb--a" />
+        <span className="aisr-advantage__orb aisr-advantage__orb--b" />
+        <span className="aisr-advantage__orb aisr-advantage__orb--c" />
+        <span className="aisr-advantage__sheen" />
+      </div>
+
+      <Container className="aisr-advantage__content max-w-7xl">
         <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-xl lg:text-left">
           <p className="inline-flex rounded-full bg-secondary/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
             The AISR Advantage
@@ -38,7 +46,7 @@ export function Advantage() {
             return (
               <li
                 key={feature.id}
-                className="rounded-card border border-primary/8 bg-card p-5 shadow-[0_12px_28px_-18px_rgba(104,207,247,0.55),0_4px_12px_-8px_rgba(104,207,247,0.28)] transition-[box-shadow,background-color,border-color] duration-300 hover:shadow-[0_18px_36px_-14px_rgba(25,29,49,0.35),0_10px_22px_-10px_rgba(25,29,49,0.22),0_4px_12px_-6px_rgba(104,207,247,0.35)] active:border-secondary/50 active:bg-secondary/15 active:shadow-[0_16px_32px_-12px_rgba(104,207,247,0.65),0_8px_18px_-8px_rgba(104,207,247,0.45)]"
+                className="rounded-card border border-primary/8 bg-card p-5 shadow-[0_12px_28px_-18px_rgba(0,236,245,0.55),0_4px_12px_-8px_rgba(0,236,245,0.28)] transition-[box-shadow,background-color,border-color] duration-300 hover:shadow-[0_18px_36px_-14px_rgba(25,29,49,0.35),0_10px_22px_-10px_rgba(25,29,49,0.22),0_4px_12px_-6px_rgba(0,236,245,0.35)] active:border-secondary/50 active:bg-secondary/15 active:shadow-[0_16px_32px_-12px_rgba(0,236,245,0.65),0_8px_18px_-8px_rgba(0,236,245,0.45)]"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-control bg-secondary/15 text-primary">
                   <Icon aria-hidden="true" size={22} />

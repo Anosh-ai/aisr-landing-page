@@ -1,34 +1,42 @@
+/* Platform copy matches reference: Inter, not Plus Jakarta display */
+.aisr-platform-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
 /* Platform dashboard tilt — preserve PNG rounded edges / Risk Score */
 
 @keyframes aisr-dash-float {
   0%,
   100% {
-    transform: rotateY(8deg) rotateX(3deg) rotateZ(-1deg) translateY(0);
+    transform: rotateY(8deg) rotateX(3deg) rotateZ(-2.5deg) translateY(0);
   }
   50% {
-    transform: rotateY(8deg) rotateX(3deg) rotateZ(-1deg) translateY(-6px);
+    transform: rotateY(8deg) rotateX(3deg) rotateZ(-2.5deg) translateY(-6px);
   }
 }
 
-@keyframes aisr-dash-float-lg {
+@keyframes aisr-dash-glow {
   0%,
   100% {
-    transform: rotateY(10deg) rotateX(4deg) rotateZ(-1.5deg) translateY(0);
+    opacity: 0.55;
+    transform: scale(1);
   }
   50% {
-    transform: rotateY(10deg) rotateX(4deg) rotateZ(-1.5deg) translateY(-8px);
+    opacity: 0.85;
+    transform: scale(1.03);
   }
 }
 
 .aisr-dash-frame {
   transform-style: preserve-3d;
-  transform-origin: left center;
-  transform: rotateY(8deg) rotateX(3deg) rotateZ(-1deg);
+  transform-origin: 18% center;
+  transform: rotateY(8deg) rotateX(3deg) rotateZ(-2.5deg);
   animation: aisr-dash-float 5.5s ease-in-out infinite;
   will-change: transform;
-  /* Just enough room so tilt does not clip the card / rounded corners */
-  margin-block: 0.2rem;
-  margin-inline-end: 0.35rem;
+  /* Room so the slight tilt does not clip the card corners */
+  margin-block: 0.35rem;
+  margin-inline: 0.15rem;
   overflow: visible;
   border-radius: 0;
 }
@@ -38,17 +46,40 @@
   border-radius: 0;
   /* Keep PNG edges crisp — no extra mask/clip on the asset */
   overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
-@media (min-width: 640px) {
-  .aisr-dash-frame {
-    transform: rotateY(10deg) rotateX(4deg) rotateZ(-1.5deg);
-    animation-name: aisr-dash-float-lg;
-  }
+/* Soft blue shade under the card, matching the reference float */
+.aisr-dash-shade {
+  position: absolute;
+  z-index: 0;
+  left: 4%;
+  right: 6%;
+  bottom: 0;
+  height: 34%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(126, 206, 236, 0.9) 0%,
+    rgba(168, 224, 244, 0.55) 38%,
+    rgba(198, 236, 248, 0.18) 62%,
+    rgba(198, 236, 248, 0) 76%
+  );
+  filter: blur(14px);
+  transform: translateY(62%);
+  pointer-events: none;
 }
+
+.aisr-dash-glow {
+  animation: aisr-dash-glow 4.2s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
-  .aisr-dash-frame {
+  .aisr-dash-frame,
+  .aisr-dash-glow {
     animation: none !important;
   }
 }

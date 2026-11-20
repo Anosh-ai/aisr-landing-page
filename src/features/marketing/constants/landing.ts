@@ -105,9 +105,12 @@ export const platformPoints = [
   "Actionable safety and compliance insights",
 ] as const
 
-export const audienceStrip = [
-  "Drivers",
-  "Trucking companies",
-  "Freight brokers",
-  "Insurance agents",
+export const trustedByCopy = "Trusted by Industry Leaders" as const
+
+export const trustedBrands = [
+  { id: "freightex", name: "FREIGHTEX", logo: "freightex" },
+  { id: "loadwise", name: "LoadWise", logo: "loadwise" },
+  { id: "carrierhub", name: "CarrierHub", logo: "carrierhub" },
+  { id: "transmove", name: "TransMove", logo: "transmove" },
+  { id: "quicklogistics", name: "QuickLogistics", logo: "quicklogistics" },
 ] as const

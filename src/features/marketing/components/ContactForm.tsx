@@ -137,7 +137,7 @@ export function ContactForm() {
       })}
       <button
         type="submit"
-        className="inline-flex items-center justify-center rounded-button bg-secondary px-7 py-3.5 text-base font-semibold text-primary shadow-[0_10px_15px_-3px_rgba(104,207,247,0.3)] hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+        className="inline-flex items-center justify-center rounded-button bg-secondary px-7 py-3.5 text-base font-semibold text-on-secondary shadow-[0_10px_15px_-3px_rgba(0,236,245,0.3)] hover:bg-white hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
       >
         Send message
       </button>

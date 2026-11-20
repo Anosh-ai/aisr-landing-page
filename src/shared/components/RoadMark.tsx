@@ -1,4 +1,4 @@
-import aisrMark from "@/features/marketing/assets/logos/aisr-mark.png"
+import aisrMark from "@/shared/assets/aisr-mark.png"
 
 type RoadMarkProps = {
   className?: string

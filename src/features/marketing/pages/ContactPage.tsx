@@ -1,5 +1,5 @@
 import { ContactDetails } from "@/features/marketing/components/sections/ContactDetails"
-import { ContactForm } from "@/features/marketing/components/ui/ContactForm"
+import { ContactForm } from "@/features/marketing/components/ContactForm"
 import { Container } from "@/shared/components/Container"
 import { PageHero } from "@/shared/components/PageHero"
 import { usePageTitle } from "@/shared/hooks/usePageTitle"

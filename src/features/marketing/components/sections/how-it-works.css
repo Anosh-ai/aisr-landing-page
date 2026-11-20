@@ -113,7 +113,7 @@
 }
 
 .aisr-node-marker.is-current {
-  background: #68cff7;
+  background: #00ecf5;
   transform: translate(-50%, -50%) scale(1.08);
 }
 

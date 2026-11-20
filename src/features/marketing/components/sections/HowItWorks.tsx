@@ -187,7 +187,7 @@ function RoadLayers({ d, glowId }: { d: string; glowId: string }) {
         opacity={0.5}
         filter={`url(#${glowId}-blur)`}
       />
-      <path d={d} fill="none" stroke="#68cff7" strokeWidth={52} strokeLinecap="round" />
+      <path d={d} fill="none" stroke="#00ecf5" strokeWidth={52} strokeLinecap="round" />
       <path d={d} fill="none" stroke="#101425" strokeWidth={38} strokeLinecap="round" />
       <path d={d} fill="none" stroke="#1c2338" strokeWidth={30} strokeLinecap="round" opacity={0.7} />
       <path
@@ -305,9 +305,9 @@ function JourneyBoard({
       >
         <defs>
           <linearGradient id={glowId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#68cff7" stopOpacity="0.25" />
-            <stop offset="50%" stopColor="#68cff7" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#68cff7" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#00ecf5" stopOpacity="0.25" />
+            <stop offset="50%" stopColor="#00ecf5" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#00ecf5" stopOpacity="0.3" />
           </linearGradient>
           <filter id={`${glowId}-blur`} x="-15%" y="-15%" width="130%" height="130%">
             <feGaussianBlur stdDeviation="3" />
@@ -319,8 +319,8 @@ function JourneyBoard({
 
         {start ? (
           <g transform={`translate(${start.x} ${start.y})`} aria-hidden="true">
-            <circle r={10} fill="#68cff7" opacity={0.25} />
-            <circle r={5.5} fill="#68cff7" stroke="#fff" strokeWidth={2.2} />
+            <circle r={10} fill="#00ecf5" opacity={0.25} />
+            <circle r={5.5} fill="#00ecf5" stroke="#fff" strokeWidth={2.2} />
           </g>
         ) : null}
 
@@ -335,7 +335,7 @@ function JourneyBoard({
         {end ? (
           <g transform={`translate(${end.x} ${end.y})`} aria-hidden="true">
             <circle r={20} fill="#191d31" />
-            <circle r={13} fill="#68cff7" opacity={0.22} />
+            <circle r={13} fill="#00ecf5" opacity={0.22} />
             <path
               d="M-4.5 0 L-1 3.5 L5 -3"
               fill="none"
@@ -397,7 +397,7 @@ function JourneyBoard({
         )
       })}
 
-      <div className="pointer-events-none absolute bottom-3 right-6 z-[5] inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-white/95 px-3.5 py-2 text-[0.75rem] font-medium text-primary shadow-[0_10px_24px_-14px_rgba(104,207,247,0.45)]">
+      <div className="pointer-events-none absolute bottom-3 right-6 z-[5] inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-white/95 px-3.5 py-2 text-[0.75rem] font-medium text-primary shadow-[0_10px_24px_-14px_rgba(0,236,245,0.45)]">
         <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white">
           <Check aria-hidden="true" size={10} strokeWidth={3} />
         </span>

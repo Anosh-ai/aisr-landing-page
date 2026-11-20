@@ -1,0 +1,144 @@
+/* Advantage — light cyan ambient background motion (uses --color-secondary / #00ECF5) */
+
+.aisr-advantage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.aisr-advantage__bg {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.aisr-advantage__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  will-change: transform, opacity;
+}
+
+.aisr-advantage__orb--a {
+  top: -18%;
+  left: -8%;
+  width: min(52vw, 28rem);
+  height: min(52vw, 28rem);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-secondary) 22%, transparent) 0%,
+    transparent 72%
+  );
+  animation: aisr-advantage-drift-a 14s ease-in-out infinite;
+}
+
+.aisr-advantage__orb--b {
+  right: -10%;
+  bottom: -22%;
+  width: min(58vw, 32rem);
+  height: min(58vw, 32rem);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-secondary) 16%, transparent) 0%,
+    transparent 74%
+  );
+  animation: aisr-advantage-drift-b 18s ease-in-out infinite;
+}
+
+.aisr-advantage__orb--c {
+  top: 28%;
+  left: 38%;
+  width: min(36vw, 18rem);
+  height: min(36vw, 18rem);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-secondary) 12%, transparent) 0%,
+    transparent 70%
+  );
+  animation: aisr-advantage-pulse 10s ease-in-out infinite;
+}
+
+.aisr-advantage__sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-secondary) 5%, transparent) 42%,
+    transparent 68%
+  );
+  background-size: 220% 220%;
+  animation: aisr-advantage-sheen 16s ease-in-out infinite;
+}
+
+.aisr-advantage__content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes aisr-advantage-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate3d(12%, 18%, 0) scale(1.12);
+    opacity: 0.65;
+  }
+}
+
+@keyframes aisr-advantage-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.32;
+  }
+  50% {
+    transform: translate3d(-14%, -12%, 0) scale(1.08);
+    opacity: 0.55;
+  }
+}
+
+@keyframes aisr-advantage-pulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.48;
+  }
+}
+
+@keyframes aisr-advantage-sheen {
+  0%,
+  100% {
+    background-position: 0% 40%;
+    opacity: 0.4;
+  }
+  50% {
+    background-position: 100% 60%;
+    opacity: 0.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aisr-advantage__orb,
+  .aisr-advantage__sheen {
+    animation: none !important;
+  }
+
+  .aisr-advantage__orb--a,
+  .aisr-advantage__orb--b,
+  .aisr-advantage__orb--c {
+    opacity: 0.35;
+  }
+
+  .aisr-advantage__sheen {
+    opacity: 0.3;
+  }
+}

@@ -3,17 +3,17 @@ import { Link } from "react-router-dom"
 
 const variants = {
   primary:
-    "border border-secondary bg-secondary text-primary shadow-[0_10px_24px_-4px_rgba(104,207,247,0.4)] hover:bg-secondary hover:shadow-[0_14px_30px_-4px_rgba(104,207,247,0.6)]",
+    "border border-secondary bg-secondary text-on-secondary shadow-[0_10px_24px_-4px_rgba(0,236,245,0.35)] hover:bg-secondary hover:shadow-[0_14px_30px_-4px_rgba(0,236,245,0.5)]",
   secondaryDark:
     "border border-white/25 bg-white/5 text-white hover:bg-white/10",
   secondaryLight:
     "border border-primary/10 bg-white text-primary hover:border-secondary",
   ghost:
-    "border border-white/25 bg-transparent text-white hover:bg-white/10",
+    "border border-white/40 bg-transparent text-white hover:bg-white/10",
 } as const
 
 const baseClass =
-  "inline-flex items-center justify-center gap-2 rounded-button px-7 py-3.5 text-center text-base font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:cursor-not-allowed disabled:opacity-60"
+  "inline-flex items-center justify-center gap-2 rounded-button px-6 py-3.5 text-center text-[15px] font-semibold leading-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:cursor-not-allowed disabled:opacity-60"
 
 type Variant = keyof typeof variants
 
