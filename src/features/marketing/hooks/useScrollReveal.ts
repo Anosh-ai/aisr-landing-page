@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from "react"
 
-export function useScrollReveal<T extends HTMLElement>() {
-  const ref = useRef<T>(null)
-  const [visible, setVisible] = useState(() => {
-    if (typeof window === "undefined") return true
-    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false
-    return reducedMotion || !("IntersectionObserver" in window)
-  })
+export function useScrollReveal<T extends HTMLElement>(rootMargin = "0px 0px -8% 0px") {
+  const ref = useRef<T | null>(null)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const element = ref.current
-    if (!element) return
+    const node = ref.current
+    if (!node) {
+      return
+    }
 
-    const reducedMotion =
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false
-    if (reducedMotion || !("IntersectionObserver" in window)) return
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reducedMotion) {
+      setVisible(true)
+      return
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -23,12 +23,12 @@ export function useScrollReveal<T extends HTMLElement>() {
           observer.disconnect()
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.16, rootMargin },
     )
 
-    observer.observe(element)
+    observer.observe(node)
     return () => observer.disconnect()
-  }, [])
+  }, [rootMargin])
 
   return { ref, visible }
 }

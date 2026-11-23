@@ -4,9 +4,8 @@ import { NotFoundPage } from "@/app/pages/NotFoundPage"
 import {
   AboutPage,
   ContactPage,
-  LandingDesign2,
-  LandingDesign3,
   LandingPage,
+  LandingV2Page,
   PrivacyPage,
   TermsPage,
 } from "@/features/marketing"
@@ -14,12 +13,11 @@ import {
 export function AppRoutes() {
   return (
     <Routes>
+      <Route path="2" element={<LandingV2Page />} />
       <Route element={<SiteLayout />}>
         <Route index element={<LandingPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />
-        <Route path="design-2" element={<LandingDesign2 />} />
-        <Route path="design-3" element={<LandingDesign3 />} />
         <Route path="terms" element={<TermsPage />} />
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="*" element={<NotFoundPage />} />

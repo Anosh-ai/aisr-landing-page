@@ -1,6 +1,5 @@
 export { LandingPage } from "./pages/LandingPage"
-export { LandingDesign2 } from "./pages/LandingDesign2"
-export { LandingDesign3 } from "./pages/LandingDesign3"
+export { LandingV2Page } from "./pages/LandingV2Page"
 export { AboutPage } from "./pages/AboutPage"
 export { ContactPage } from "./pages/ContactPage"
 export { PrivacyPage } from "./pages/PrivacyPage"

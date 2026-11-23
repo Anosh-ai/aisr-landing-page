@@ -1,6 +1,8 @@
 import { useState } from "react"
 import type { FormEvent } from "react"
+import { ArrowRight } from "lucide-react"
 import { contactFields } from "@/features/marketing/constants/contact"
+import { Button } from "@/shared/components/ui/Button"
 import { siteConfig } from "@/shared/config/site"
 
 type FormState = {
@@ -90,59 +92,75 @@ export function ContactForm() {
 
   return (
     <form className="space-y-5" onSubmit={onSubmit} noValidate>
-      {contactFields.map((field) => {
-        const key = field.toLowerCase() as keyof FormState
-        const id = fieldIds[field]
-        const error = errors[key]
-        const sharedClass = `mt-2 w-full rounded-control border bg-white px-3.5 py-3 text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary ${
-          error ? "border-[#8f2d2d]" : "border-primary/15"
-        }`
+      <div className="grid gap-5 sm:grid-cols-2">
+        {contactFields
+          .filter((field) => field !== "Message")
+          .map((field) => {
+            const key = field.toLowerCase() as keyof FormState
+            const id = fieldIds[field]
+            const error = errors[key]
+            const sharedClass = `mt-2 w-full rounded-xl border bg-surface px-3.5 py-3 text-sm text-primary transition-[border-color,box-shadow] focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/25 ${
+              error ? "border-[#8f2d2d]" : "border-line"
+            }`
 
-        return (
-          <div key={field}>
-            <label htmlFor={id} className="text-sm font-semibold text-primary">
-              {field}
-            </label>
-            {field === "Message" ? (
-              <textarea
-                id={id}
-                name="message"
-                rows={6}
-                value={form.message}
-                onChange={(event) => update("message", event.target.value)}
-                className={sharedClass}
-                aria-invalid={error ? true : undefined}
-                aria-describedby={error ? `${id}-error` : undefined}
-              />
-            ) : (
-              <input
-                id={id}
-                name={key}
-                type={field === "Email" ? "email" : "text"}
-                autoComplete={field === "Email" ? "email" : "name"}
-                value={form[key]}
-                onChange={(event) => update(key, event.target.value)}
-                className={sharedClass}
-                aria-invalid={error ? true : undefined}
-                aria-describedby={error ? `${id}-error` : undefined}
-              />
-            )}
-            {error ? (
-              <p id={`${id}-error`} className="mt-2 text-sm text-[#8f2d2d]">
-                {error}
-              </p>
-            ) : null}
-          </div>
-        )
-      })}
-      <button
-        type="submit"
-        className="inline-flex items-center justify-center rounded-button bg-secondary px-7 py-3.5 text-base font-bold text-on-secondary shadow-[0_10px_15px_-3px_rgba(0,236,245,0.3)] hover:bg-white hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-      >
+            return (
+              <div key={field}>
+                <label htmlFor={id} className="text-sm font-semibold text-primary">
+                  {field}
+                  <span className="text-secondary"> *</span>
+                </label>
+                <input
+                  id={id}
+                  name={key}
+                  type={field === "Email" ? "email" : "text"}
+                  autoComplete={field === "Email" ? "email" : "name"}
+                  value={form[key]}
+                  onChange={(event) => update(key, event.target.value)}
+                  className={sharedClass}
+                  aria-invalid={error ? true : undefined}
+                  aria-describedby={error ? `${id}-error` : undefined}
+                />
+                {error ? (
+                  <p id={`${id}-error`} className="mt-2 text-sm text-[#8f2d2d]">
+                    {error}
+                  </p>
+                ) : null}
+              </div>
+            )
+          })}
+      </div>
+
+      <div>
+        <label htmlFor={fieldIds.Message} className="text-sm font-semibold text-primary">
+          Message
+          <span className="text-secondary"> *</span>
+        </label>
+        <textarea
+          id={fieldIds.Message}
+          name="message"
+          rows={5}
+          value={form.message}
+          onChange={(event) => update("message", event.target.value)}
+          className={`mt-2 w-full rounded-xl border bg-surface px-3.5 py-3 text-sm text-primary transition-[border-color,box-shadow] focus-visible:border-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/25 ${
+            errors.message ? "border-[#8f2d2d]" : "border-line"
+          }`}
+          aria-invalid={errors.message ? true : undefined}
+          aria-describedby={errors.message ? `${fieldIds.Message}-error` : undefined}
+        />
+        {errors.message ? (
+          <p id={`${fieldIds.Message}-error`} className="mt-2 text-sm text-[#8f2d2d]">
+            {errors.message}
+          </p>
+        ) : null}
+      </div>
+
+      <Button type="submit" className="w-full sm:w-auto">
         Send message
-      </button>
+        <ArrowRight size={16} aria-hidden="true" />
+      </Button>
+
       {status ? (
-        <p role="status" className="text-sm leading-6 text-ink">
+        <p role="status" className="rounded-xl border border-secondary/30 bg-secondary/10 px-4 py-3 text-sm leading-6 text-primary">
           {status}
         </p>
       ) : null}

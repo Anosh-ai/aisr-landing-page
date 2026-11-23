@@ -1,9 +1,10 @@
 export const mainNavigation = [
-  { id: "product", label: "Product", href: "/#product" },
+  { id: "home", label: "Home", href: "/" },
+  { id: "platform", label: "Platform", href: "/#capabilities" },
   { id: "solutions", label: "Solutions", href: "/#audiences" },
-  { id: "industries", label: "Industries", href: "/#audiences" },
-  { id: "resources", label: "Resources", href: "/about" },
-  { id: "pricing", label: "Pricing", href: "/contact" },
+  { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
+  { id: "about", label: "About", href: "/about" },
+  { id: "contact", label: "Contact", href: "/contact" },
 ] as const
 
 export const footerGroups = [
@@ -11,10 +12,11 @@ export const footerGroups = [
     id: "product",
     title: "Product",
     links: [
-      { id: "driver-verification", label: "Driver Verification", href: "/#product" },
-      { id: "eld", label: "ELD Integration", href: "/#product" },
-      { id: "insurance", label: "Insurance Verification", href: "/#product" },
-      { id: "freight", label: "Freight Monitoring", href: "/#platform" },
+      { id: "driver-verification", label: "Driver Verification", href: "/#driver-identity" },
+      { id: "eld", label: "ELD Integration", href: "/#eld" },
+      { id: "fraud", label: "Fraud & Anomaly Detection", href: "/#fraud" },
+      { id: "freight", label: "Freight Monitoring", href: "/#freight" },
+      { id: "insurance", label: "Insurance Verification", href: "/#insurance-mgmt" },
     ],
   },
   {
@@ -31,6 +33,7 @@ export const footerGroups = [
     id: "company",
     title: "Company",
     links: [
+      { id: "faqs", label: "FAQs", href: "/#faqs" },
       { id: "about", label: "About AISR", href: "/about" },
       { id: "contact", label: "Contact Us", href: "/contact" },
       { id: "privacy", label: "Privacy Policy", href: "/privacy" },

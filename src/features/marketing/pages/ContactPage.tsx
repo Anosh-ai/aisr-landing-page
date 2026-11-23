@@ -1,4 +1,4 @@
-import { ContactDetails } from "@/features/marketing/components/sections/ContactDetails"
+import { ContactDetails } from "@/features/marketing/components/sections/contact/ContactDetails"
 import { ContactForm } from "@/features/marketing/components/ContactForm"
 import { Container } from "@/shared/components/Container"
 import { PageHero } from "@/shared/components/PageHero"

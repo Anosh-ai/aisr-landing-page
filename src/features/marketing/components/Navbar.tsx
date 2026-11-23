@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react"
 import { mainNavigation } from "@/features/marketing/constants/navigation"
 import { Logo } from "@/shared/components/Logo"
 import { shellPad } from "@/features/marketing/constants/shell"
+import { buttonVariants, navButtonSize } from "@/shared/components/ui/buttonVariants"
 
 function navClass(isActive: boolean) {
-  return `relative inline-flex items-center gap-1 rounded-none px-3 py-2 text-sm font-medium shadow-none outline-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:rounded-full after:transition-colors ${
+  return `relative inline-flex items-center gap-1 rounded-none px-2.5 py-2 text-[0.8125rem] font-medium shadow-none outline-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary after:absolute after:inset-x-2.5 after:bottom-0 after:h-0.5 after:rounded-full after:transition-colors xl:px-3 xl:text-sm ${
     isActive
       ? "text-secondary after:bg-secondary"
       : "text-white/85 after:bg-transparent hover:text-white hover:after:bg-secondary/50"
@@ -26,7 +27,6 @@ function isItemActive(pathname: string, hash: string, href: string) {
 export function Navbar() {
   const location = useLocation()
   const isHome = location.pathname === "/"
-  const isDesign2 = location.pathname === "/design-2"
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [openPath, setOpenPath] = useState(location.pathname + location.hash)
@@ -58,7 +58,7 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [open])
 
-  const solidNav = isDesign2 ? false : !isHome || scrolled || open
+  const solidNav = !isHome || scrolled || open
 
   return (
     <header
@@ -70,7 +70,7 @@ export function Navbar() {
     >
       <div className={`${shellPad} flex h-20 items-center justify-between gap-4`}>
         <Logo />
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {mainNavigation.map((item) => {
             const active = isItemActive(location.pathname, location.hash, item.href)
             return (
@@ -86,17 +86,11 @@ export function Navbar() {
           })}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-bold text-white shadow-none outline-none hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
-          >
+          <Link to="/contact" className={`${navButtonSize} ${buttonVariants.ghost}`}>
             Sign In
           </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-bold text-on-secondary shadow-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary active:shadow-none"
-          >
-            Sign Up
+          <Link to="/contact" className={`${navButtonSize} ${buttonVariants.primaryCompact}`}>
+            Request Demo
           </Link>
         </div>
         <button
@@ -128,18 +122,12 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <div className="mt-3 flex flex-col gap-2">
-              <Link
-                to="/contact"
-                className="inline-flex w-fit items-center justify-center rounded-lg border border-white/40 px-3.5 py-1.5 text-sm font-bold text-white shadow-none"
-              >
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Link to="/contact" className={`${navButtonSize} ${buttonVariants.ghost}`}>
                 Sign In
               </Link>
-              <Link
-                to="/contact"
-                className="inline-flex w-fit items-center justify-center rounded-lg bg-secondary px-3.5 py-1.5 text-sm font-bold text-on-secondary shadow-none"
-              >
-                Sign Up
+              <Link to="/contact" className={`${navButtonSize} ${buttonVariants.primaryCompact}`}>
+                Request Demo
               </Link>
             </div>
           </div>

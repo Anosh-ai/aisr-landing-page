@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { aboutContent } from "@/features/marketing/constants/about"
-import { Container } from "@/shared/components/Container"
+import { shellPad } from "@/features/marketing/constants/shell"
 import { PageHero } from "@/shared/components/PageHero"
 import { usePageTitle } from "@/shared/hooks/usePageTitle"
 
@@ -15,32 +15,34 @@ export function AboutPage() {
         description={aboutContent.lead}
       />
       <section className="bg-canvas py-16 md:py-24">
-        <Container>
-          <div className="mx-auto max-w-3xl space-y-12">
-          {aboutContent.sections.map((section) => (
-            <article key={section.title}>
-              <h2 className="text-2xl text-primary md:text-3xl">{section.title}</h2>
-              <div className="mt-4 space-y-4">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="text-base leading-7 text-ink">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </article>
-          ))}
-          <p className="text-base leading-7 text-ink">
-            The thirteen capability areas are listed on the{" "}
-            <Link
-              to="/#product"
-              className="font-semibold text-primary underline decoration-secondary decoration-2 underline-offset-4"
-            >
-              home page
-            </Link>
-            .
-          </p>
+        <div className={shellPad}>
+          <div className="max-w-3xl space-y-12">
+            {aboutContent.sections.map((section) => (
+              <article key={section.title}>
+                <h2 className="font-display text-2xl font-bold tracking-tight text-primary md:text-3xl">
+                  {section.title}
+                </h2>
+                <div className="mt-4 space-y-4">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph} className="text-base leading-7 text-ink md:leading-8">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            ))}
+            <p className="text-base leading-7 text-ink md:leading-8">
+              The thirteen capability areas are listed on the{" "}
+              <Link
+                to="/#capabilities"
+                className="font-semibold text-primary underline decoration-secondary decoration-2 underline-offset-4"
+              >
+                home page
+              </Link>
+              .
+            </p>
           </div>
-        </Container>
+        </div>
       </section>
     </>
   )
